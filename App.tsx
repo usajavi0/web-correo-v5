@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 
-// --- CONSTANTES (de tu archivo constants.ts) ---
-const HOST_IMAGE_URL = 'https://lh3.googleusercontent.com/d/1ujSy_8l--giNndxKQ9S9_pAsYdC9mul2';
+// --- CONSTANTES ---
+
+// --- CORRECCIÓN DE LA IMAGEN ---
+// El enlace anterior a Google Drive no funciona para webs públicas.
+// Lo reemplazamos con una imagen temporal.
+//
+// PARA USAR TU PROPIA FOTO:
+// 1. Crea una carpeta llamada "public" en la raíz de tu proyecto.
+// 2. Guarda tu foto ahí (ej: "anfitriones.jpg").
+// 3. Cambia esta URL por: "/anfitriones.jpg"
+const HOST_IMAGE_URL = 'https://placehold.co/200x200/1990e5/ffffff?text=Anfitriones';
+
 const HERO_BACKGROUND_IMAGE_URL = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCz8syxVxVMMOPFDLljBTpem_syWAqvj21zILm_eHW_kP9lw7tqRl1gK2rE1DOOWwSqJpOOTylR2sYDhlfYX6avFe_0i7mZMX7rvZiAmA2gN-xDtRoMTyhdt_S6lZmFHnWdiQWWBBzfv83qm3k7VwpEf1Q_jRZzr9atOzcCCAuyFkQLCg6ws3P5QWu1vpVPio5wv-nWgbWkNoPfjjo0TIsOTP-u-wXfC6aeaHNRwYppDcg-KoEOVQhgb_iv-hSkj_PKB7KBlHQBTAtU';
 const GUIDE_TITLE = "7 Herramientas Para Empezar a Sanar Hoy";
 const GUIDE_SUBTITLE = "Siete llaves emocionales para volver a ti. Desde la herida, hacia la claridad.";
 
-// --- TIPOS DE DATOS (de tu archivo types.ts) ---
+// --- TIPOS DE DATOS ---
 interface ValueBenefit {
   id: string;
   icon: 'Heart' | 'Sun' | 'Tree';
@@ -14,8 +24,7 @@ interface ValueBenefit {
   description: string;
 }
 
-// --- COMPONENTES (de tu carpeta /components) ---
-// No necesitas importarlos porque están todos aquí mismo.
+// --- COMPONENTES ---
 
 const Icon: React.FC<{ name: 'Heart' | 'Sun' | 'Tree', className?: string }> = ({ name, className = "w-8 h-8" }) => {
   switch (name) {
@@ -111,7 +120,7 @@ const AboutUsSection: React.FC<{ imageUrl: string; hostsName: string; descriptio
   return (
     <section className="py-16 bg-brand-bg-default">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 bg-white p-10 rounded-2xl shadow-xl border border-brand-border">
-          <img src={imageUrl} alt={`Retrato de ${hostsName}`} className="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-white" onError={(e) => { e.currentTarget.src = 'https://placehold.co/200x200/e0e0e0/777?text=Host'; }} />
+          <img src={imageUrl} alt={`Retrato de ${hostsName}`} className="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-white" />
         <div className="text-center md:text-left">
           <h3 className="text-3xl font-bold text-brand-text-primary mb-2">Sobre los anfitriones</h3>
           <p className="text-lg text-brand-text-secondary mb-1"><span className="font-bold text-brand-primary">{hostsName}</span></p>
@@ -136,7 +145,6 @@ const FinalCtaSection: React.FC<{ onSubmit: (name: string, email: string) => voi
 
 
 // --- APLICACIÓN PRINCIPAL (App.tsx) ---
-// Esta es la parte principal que une todo.
 const App: React.FC = () => {
   const handleFormSubmit = (name: string, email: string) => {
     console.log(`Form submitted:`, { name, email });

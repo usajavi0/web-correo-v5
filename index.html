@@ -4,57 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7 Herramientas Para Empezar a Sanar Desde Hoy</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'sans': ['Plus Jakarta Sans', 'Noto Sans', 'sans-serif'],
-          },
-          colors: {
-            'brand-primary': '#1990e5', // Blue from buttons
-            'brand-primary-darker': '#137abd', // Darker blue for hover
-            'brand-text-primary': '#0e151b', // Main dark text
-            'brand-text-secondary': '#4e7997', // Lighter text, placeholders
-            'brand-bg-light': '#e7eef3', // Input background in final CTA, very light gray/blue
-            'brand-bg-default': '#f8fafc', // slate-50 equivalent
-            'brand-bg-card': '#ffffff', // white for cards
-            'brand-border': '#d0dde7', // Borders for cards, inputs
-            'brand-hero-bg-image': 'https://lh3.googleusercontent.com/aida-public/AB6AXuCz8syxVxVMMOPFDLljBTpem_syWAqvj21zILm_eHW_kP9lw7tqRl1gK2rE1DOOWwSqJpOOTylR2sYDhlfYX6avFe_0i7mZMX7rvZiAmA2gN-xDtRoMTyhdt_S6lZmFHnWdiQWWBBzfv83qm3k7VwpEf1Q_jRZzr9atOzcCCAuyFkQLCg6ws3P5QWu1vpVPio5wv-nWgbWkNoPfjjo0TIsOTP-u-wXfC6aeaHNRwYppDcg-KoEOVQhgb_iv-hSkj_PKB7KBlHQBTAtU',
-            'brand-white': '#ffffff',
-            'brand-black-alpha-10': 'rgba(0, 0, 0, 0.1)',
-            'brand-black-alpha-40': 'rgba(0, 0, 0, 0.4)',
-          },
-          containerQueries: {
-            'xs': '20rem',
-            'sm': '24rem',
-            'md': '28rem',
-            'lg': '32rem',
-            'xl': '36rem',
-            '2xl': '42rem',
-            // etc.
-          }
-        }
-      }
-    }
-  </script>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-brand-bg-default text-brand-text-primary">
   <div id="root"></div>
+
+  <!-- 
+    EL MAPA FINAL. ALINEADO.
+    Le dice a Vite: "El archivo que necesitas, 'index.tsx', está aquí mismo".
+  -->
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
